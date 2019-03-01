@@ -24,11 +24,11 @@ def _reactNativeVersion = _ext.has('reactNative') ? _ext.reactNative : '+'
 def _compileSdkVersion = _ext.has('compileSdkVersion') ? _ext.compileSdkVersion : 27
 def _buildToolsVersion = _ext.has('buildToolsVersion') ? _ext.buildToolsVersion : '27.0.3'
 def _minSdkVersion = _ext.has('minSdkVersion') ? _ext.minSdkVersion : 16
-def _targetSdkVersion = _ext.has('targetSdkVersion') ? _ext.targetSdkVersion : 27
+def _targetSdkVersion = _ext.has('targetSdkVersion') ? _ext.targetSdkVersion : 28
 
 android {
-  compileSdkVersion _compileSdkVersion
-  buildToolsVersion _buildToolsVersion
+  compileSdkVersion 28
+  buildToolsVersion '28.0.3'
 
   defaultConfig {
     minSdkVersion _minSdkVersion
@@ -43,8 +43,10 @@ android {
 
 repositories {
   mavenCentral()
+  google()
 }
 
 dependencies {
   implementation "com.facebook.react:react-native:${_reactNativeVersion}"
+  implementation 'androidx.biometric:biometric:1.0.0-alpha03'
 }

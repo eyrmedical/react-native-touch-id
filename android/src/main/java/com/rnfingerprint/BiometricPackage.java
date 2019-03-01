@@ -10,18 +10,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class FingerprintAuthPackage implements ReactPackage {
+public class BiometricPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
 
-        modules.add(new FingerprintAuthModule(reactContext));
+        modules.add(new BiometricDialogModule(reactContext));
 
         return modules;
     }
 
-    // @Override
-    // deprecated in 47
     public List<Class<? extends JavaScriptModule>> createJSModules() {
         return Collections.emptyList();
     }
